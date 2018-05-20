@@ -1,0 +1,2 @@
+default-locale: "default_lang.yml"
+use-placeholders: true

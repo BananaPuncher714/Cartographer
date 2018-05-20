@@ -1,0 +1,10 @@
+# Types that your members show up as on the map depending on their rank
+rank:
+    one: WHITE_POINTER
+    two: GREEN_POINTER
+    three: BLUE_POINTER
+    four: RED_POINTER
+    five: RED_MARKER
+    
+# This is whether or not you want your cursors to appear if they're off the edge of the map
+highlighted-cursor: true

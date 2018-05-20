@@ -1,0 +1,8 @@
+# The list of cursors for each thing, like the player ranks and the kingdom home.
+member-cursor: GREEN_POINTER
+mod-cursor: BLUE_POINTER
+king-cursor: RED_POINTER
+kingdom-home-cursor: MANSION
+
+# How heavy to shade a claimed piece of land
+shading-percent: 50

@@ -1,0 +1,62 @@
+[] = optional
+<> = required
+
+setmapcenter - Sets a map/Creates a new one
+    [map] - Choose which map to set the center for, creates a new one if it doesn't exist
+    
+mapreload - Reloads a given map
+    [map] - A map that must exist
+
+cartographer - The main command for everything
+	[addoverlay] <name> <url> [dither] <width> <height> - Adds an overlay for players to choose from
+	[addimage] <name> <url> - Adds an image for the maps to use
+	[overlay] - Opens the overlay inventory
+	[head] - Toggles whether or not you see heads
+	[npc] - Opens the NPC inventory
+	[locale] - Opens the locale inventory
+	[open] - Opens the cartographer inventory
+	[give] - Gives a map to a player
+	
+cursor - Toggles your cursor on or off
+
+waypoints - Manages your waypoints on the map
+    create <name> [x] [z] - Creates a beacon with a given name, at x and z coords in the map's world
+    open - Opens the waypoint GUI
+    refresh - Refreshes all waypoints saved on disk
+    
+beacon - Edit your beacons
+    add <beacon> <player> [map] - Add players who can see a beacon from a map.
+    remove <beacon> <player> [map] - Disable seeing the beacon for certain people
+    create <beacon> [...] - Create a beacon with optional parameters
+        -(m)ap <map> - The id of the map to create a beacon for
+        -(l)ocation <x:z> - The location in a world following the format 'x:z'
+        -(c)olor <color> - The color is in integer format, see here for calculating it: https://www.shodor.org/stella2java/rgbint.html
+        -(t)ime <ticks> - How long the beacon should last in ticks, put 999999 for a long long time
+        -(r)adius <int> - How wide should the beacon pulse, in pixels
+        -(s)peed <double> - How fast should it pulse, with 1 being normal speed, 2 being 2x, and .5 for half as fast
+        -(v)isible <true/false> - Whether or not everyone can see this
+        
+        An example is this: 'beacon create TestBeacon -c 1900 -r 20 -speed 2 -v true'
+    destroy <beacon> [map] - Destroy all beacons that match the given name on the specified map
+    
+markers - Edit your markers
+    create <group> <id> [...] - Create a marker with optional parameters
+        -(w)orld - The world where the marker is
+        -(d)irection - The direction of the marker
+        -(h)ighlighted - If it's highlighted
+        -(t)ype - The type of the marker
+        -(l)ocation - The x and z following the format: 'x:z'
+    destroy <group> <id> - Remove a given marker from the specified group
+    add <group> <player> - Make a player see the given marker
+    remove <group> <player> - Make a player stop seeing the given marker
+    
+mapshaders - Edit your shaders
+    create <id> [...] - Creates a shader with the given parameters:
+        - (c)olor - The int value of a color
+        - (w)idth - The width of the region
+        - (h)eight - The height of the region
+        - (t)ransparency - The opacity of the region from 0.0 to 100.0
+        - (l)ocation - The location of the top left corner following the format 'x:z'
+    destroy <id> [...]
+    add <id> <player>
+    remove <id> <player>

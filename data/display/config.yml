@@ -1,0 +1,11 @@
+# This is the list of text you want to display
+# as well as the permission attached to each one.
+# You can have color with this sequence: "\u00a7<byte>;"
+# The byte is represented by the color in the map-colors.yml file.
+
+displays:
+    1:
+        permission: "cartographer.display.coordinates"
+        message: "X: %player_x% Y: %player_y% Z: %player_z%"
+        x: 1
+        y: 1

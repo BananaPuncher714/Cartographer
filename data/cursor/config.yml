@@ -1,0 +1,14 @@
+# Here you can make static map cursors that appear independent of the map location.
+# The format goes like the example below:
+# The x and z can range from -127 to 126
+# The direction is the rotation from 0 to 15
+# The type is the cursor icon
+# and the permission is what you need to see it, and it needs to be unique, so 2 cursors CANNOT have
+# the same permission!
+display:
+    something:
+        x: -64
+        z: -64
+        direction: 0
+        type: WHITE_CIRCLE
+        permission: "cartographer.cursor.cursors"

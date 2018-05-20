@@ -1,0 +1,52 @@
+cartographer.admin - The admin command to everything apart from cursor and text selectors;
+cartographer.main.inventory - Allows you to open the cartographer inventory;
+cartographer.main.overlay - Lets you change your overlay
+cartographer.map.use - Allows you to use the map, true by default;
+
+cartographer.waypoints.use - Allows you to use waypoints, true by default;
+cartographer.waypoints.create - Allows you to create waypoints, true by default;
+cartographer.waypoints.teleport - Lets you teleport to waypoints;
+cartographer.waypoints.staff - Lets you toggle staff mode on waypoints;
+cartographer.waypoints.public - Lets you toggle the public status on waypoints;
+cartographer.waypoints.admin - Lets you do all waypoint stuff;
+cartographer.waypoints.bypass.limit - Lets you bypass the maximum waypoint limit
+
+cartographer.display.coordinates - Allows you to see the coordinates on the top left of the map;
+
+cartographer.factionsuuid.cursors - Allows you to see other faction members as well as the faction home;
+
+cartographer.kingdoms.cursors - Allows you to see other kingdom members as well as your kingdom home;
+
+cartographer.radar.use - Lets you use the radar;
+
+cartographer.towny.cursors - Lets you see town mates and the town home;
+
+cartographer.locale.change - Lets you change your locale
+
+cartographer.citizens.inventory - Lets you open the citizens inventory
+cartographer.citizens.cursors - Lets you see the citizens on your map, true by default
+cartographer.citizens.bypass.range - Lets you see all the citizens everywhere
+
+cartographer.quests.cursors - Lets you see all your locations to reach, true by default
+
+cartographer.playerheads.shader - Lets you see the heads per player
+
+cartographer.beacons.create - Lets you create beacons
+cartographer.beacons.destroy - Lets you remove beacons
+cartographer.beacons.add - Lets you add players who can see a set of beacons
+cartographer.beacons.remove - Lets you stop players from being able to see a beacon
+cartographer.beacons.shader - Lets you actually see the beacons on the map
+
+cartographer.gangsplus.cursors - Lets you see the rank cursors in gangs+
+
+cartographer.markers.cursors - Lets you view the marker cursors
+cartographer.markers.view.<id> - Lets you see the markers in the group with the specified id
+cartographer.markers.viewall - Lets you see all the markers
+
+cartographer.shaders.create - Lets you create regions
+cartographer.shaders.destroy - Lets you remove regions
+cartographer.shaders.add - Lets you add players who can see a region
+cartographer.shaders.remove - Lets you stop players from being able to see a region
+cartographer.shaders.shader - Lets you actually see the regions on the map
+
+cartographer.mythicmobs.cursors - Lets you see mythic mobs on the map

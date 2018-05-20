@@ -1,0 +1,62 @@
+name: Cartographer
+main: io.github.bananapuncher714.cartographer.Cartographer
+version: 12.1
+description: Adds a serverside minimap to Minecraft!
+author: BananaPuncher714
+softdepend:
+- "MVdWPlaceholderAPI"
+- "PlaceholderAPI"
+- "Factions"
+- "Kingdoms"
+- "Towny"
+- "WorldGuard"
+- "WorldEdit"
+- "Citizens"
+- "Quests"
+- "WorldBorder"
+- "Multiverse-Core"
+- "GangsPlus"
+- "GriefPrevention"
+- "MythicMobs"
+commands:
+    cartographer:
+        description: The base for the plugin
+    setmapcenter:
+        description: Centers the map
+    mapreload:
+        description: Reloads the map
+    waypoints:
+        description: Manages the waypoints
+        aliases:
+        - waypoint
+        - wp
+    cursor:
+        description: Manage the map cursor
+    beacon:
+        description: Create beacons on the maps
+    markers:
+        description: Edit universal markers on the map
+    mapshaders:
+        description: Edit the map region shaders
+
+permissions:
+    cartographer.map.use:
+        default: true
+    cartographer.waypoints.use:
+        default: true
+    cartographer.waypoints.create:
+        default: true
+    cartographer.locale.change:
+        default: true
+    cartographer.citizens.cursors:
+        default: true
+    cartographer.quests.cursors:
+        default: true
+    cartographer.playerheads.shaders:
+        default: true
+    cartographer.beacons.shader:
+        default: true
+    cartographer.gangsplus.cursors:
+        default: true
+    cartographer.markers.cursors:
+        default: true

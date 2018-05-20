@@ -1,0 +1,6 @@
+radius: 10
+y-radius: 5
+animal: true
+monster: true
+player: true
+hide-when-not-on-map: true

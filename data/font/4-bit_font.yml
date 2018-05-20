@@ -1,0 +1,18 @@
+id: "4-Bit Font"
+characters:
+    " ":
+    - " "
+    - " "
+    - " "
+    - " "
+    -
+    "A":
+    - " OO "
+    - "O  O"
+    - "OOOO"
+    - "O  O"
+    "B":
+    - "OOO "
+    - "OO O"
+    - "O OO"
+    - "OOOO"

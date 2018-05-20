@@ -1,0 +1,15 @@
+# Cartographer config
+config-version: 1.0
+map-load-speed: 5
+selector-delay: 0
+debug: false
+map-bug: false
+circular-zooming: false
+zoom-actions:
+    right: ZOOM_OUT
+    left: ZOOM_IN
+world-whitelist: false
+blacklisted-worlds:
+- 'world_name_here'
+map-ids: []
+tps-threshold: 16

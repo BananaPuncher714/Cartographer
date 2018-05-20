@@ -1,0 +1,5 @@
+defaults:
+    color: 16777215
+    transparency: 50
+    width: 16
+    height: 16

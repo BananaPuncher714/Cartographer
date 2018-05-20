@@ -1,0 +1,5 @@
+highlight-objectives: true
+
+location-type: WHITE_CROSS
+npc-interact-type: WHITE_POINTER
+npc-kill-type: RED_POINTER

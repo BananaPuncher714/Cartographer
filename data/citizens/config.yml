@@ -1,0 +1,6 @@
+default:
+    range: 10
+    icon: BLUE_POINTER
+    highlighted: false
+    visible: true
+hover-font: "" # You can change this to use custom font, if it supports special characters. Use ID of font

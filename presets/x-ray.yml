@@ -1,0 +1,16 @@
+transparent-blocks:
+    - STONE
+    - DIRT
+    - GRASS
+    - COAL_ORE
+    - IRON_ORE
+    - LONG_GRASS
+    - LEAVES
+    - LEAVES_2
+    - LOG
+    - LOG_2
+    
+map-colors:
+    DIAMOND_ORE,0: "0, 255, 255"
+    GOLD_ORE,0: "255, 255, 0"
+    EMERALD_ORE,0: "0, 255, 0"

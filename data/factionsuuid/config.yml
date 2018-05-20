@@ -1,0 +1,9 @@
+# This is the percent that the faction color will shade the land color
+shade-percent: 50
+
+# These are the types of cursors that players and the home will appear as.
+# They can be found at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/map/MapCursor.Type.html
+home-cursor-type: MANSION
+normal-cursor-type: GREEN_POINTER
+moderator-cursor-type: BLUE_POINTER
+admin-cursor-type: RED_POINTER

@@ -1,0 +1,14 @@
+center:
+    enable: true
+    type: WHITE_CROSS
+    highlight: true
+
+shade:
+    enable: false
+    color: "255, 0, 0"
+    tint-percent: 50
+
+cursor:
+    enable: true
+    type: WHITE_CROSS
+    distance: 32

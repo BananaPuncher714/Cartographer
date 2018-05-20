@@ -1,0 +1,14 @@
+maximum-waypoints: 5
+
+default:
+    discover-range: 10
+    # You can choose from HIDDEN, VISIBLE, or HIGHLIGHTED
+    discover-visibility: HIGHLIGHTED
+    visibility: VISIBLE
+    locked: false
+    icon: WHITE_CIRCLE
+    
+hover-font: "" # You can change this to use a custom font, if your custom font supports other characters. Use ID of font
+
+# This is whether or not to display the 'discovered waypoint' message
+show-discover-message: true

@@ -1,0 +1,285 @@
+# This is the default language file for Cartographer! If you mess up with this one,
+# delete it and it will regenerate.
+version: "4.0.0"
+
+# If you want to make your own language file, you must include the three lines below.
+# Your id is the internal name
+# name is the one that gets displayed to players
+# translate-color is whether or not to convert all '&' to the color symbol.
+# Note that Clip's PlaceholderAPI already does this, so
+# if the placeholderAPI is enabled, setting this to false doesn't do anything.
+id: "default"
+name: "&fDefault Locale"
+translate-color: true
+
+# And now here are the messages!
+# You may notice that some of them have %0, %1, or %2. Those stand for the placeholders that will be in the message
+# That means that it is going to be replace by something else.
+# These messages also include the name of the inventories and items in the inventories.
+# When creating your own locale file, you do not have to include all the messages, as
+# Cartographer will use the default locale's messages that yours does not contain.
+messages:
+    header: "&9%0> &7%1"
+    main:
+        name: "Cartographer"
+        command:
+            usage: "&cUsage: /cartographer <addimage|addoverlay|locale|open|npc|overlay|head|chunkreload|give> ..."
+            setmapcenter-usage: "&cYou must create a new map first with '&e/setmapcenter <&bname&e>&c'"
+            no-permission: "You do not have permission to run this command!"
+            addimage-usage: "&cUsage: /cartographer addimage <name> <url> [dither] [height] [width]"
+            addoverlay-usage: "&cUsage: /cartographer addoverlay <name> <url>"
+            must-be-player: "&cYou must be a player to run this command!"
+            disabled-module: "&cThis module is not enabled!"
+            config-reloaded: "The config has been reloaded!"
+
+            give-usage: "&cUsage: /cartographer give <player> <mapname> <slot>"            
+            specify-player: "&c%0 is not online right now!"
+            invalid-map: "&c%0 is not a valid map!"
+        notification:
+            saving-image: "Saving image to disk..."
+            saved-image: "Image was saved successfully to disk!"
+            save-error: "&cThere was an error saving the image to disk!"
+            invalid-url: "Invalid URL!"
+            download-error: "There was an error while downloading an image!"
+            
+            reloading-map: "Reloading map &e%0&7(&e%1&7)..."
+            updates-disabled: "Updating the map &e%0&7(&e%1&7) has been disabled!"
+            map-centered: "The map &e%0&7(&e%1&7) has been centered around &e%2&7, &e%3&7."
+            map-rendering-started: "Started rendering map &e%0&7(&e%0&7)!"
+            done-rendering: "Map rendering finished for &e%0&7(&e%0&7)!"
+            
+            map-set: "Map set for &e%0&7(&e%1&7)!"
+            overlay-set: "Overlay set for &e%0&7(&e%1&7)!"
+            overlay-removed: "Overlay removed for &e%0&7(&e%1&7)!"
+            
+            player-set-overlay: "You have successfully set your overlay!"
+            no-overlay-4-u: "&cYou cannot set an overlay for your current map!"
+            
+            no-map-found: "&cYou don't have an active map!"
+        inventory:
+            map-selector:
+                title: "&2&lMap Selector"
+                buttons:
+                    map: "&b&lMap Selection"
+                    overlay: "&a&lOverlay Selection"
+                    minimap: "&c&lMap Management"
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                items:
+                    overlay-name: "&f&l%0"
+                    map-name: "&f&l%0"
+                    minimap-name: "&f&l%0"
+                    minimap-lore-1: "&f&lId: &e%0"
+                    minimap-lore-2: "&f&lWorld: &e%0"
+                    minimap-lore-3: "&7&lLeft-click&7 to set as your map"
+                    minimap-lore-4: "&7&lRight-click&7 to reload this map"
+                    none: "&f&lNone"
+            overlay-selector:
+                title: "&2&lOverlay Selector"
+                buttons:
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                items:
+                    default-name: "&f&lDefault overlay"
+                    global-name: "&b&l%0"
+                    local-name: "&a&l%0"
+    locale:
+        name: "Locale"
+        notification:
+            changed-locale: "You have changed your locale to &e%0&7!"
+        inventory:
+            locale-selector:
+                title: "&1&lSelect Your Locale"
+                buttons:
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                items:
+                    name: "&f%0"
+    waypoints:
+        name: "Waypoints"
+        command:
+            no-permission: "You do not have permission to run this command!"
+            usage: "&cUsage: /waypoints [create|open]"
+            create-usage: "&cUsage: /waypoints create <name> [x] [z]"
+            must-be-player: "&cYou must be a player to run this command!"
+        notification:
+            too-many-waypoints: "You cannot have more than &e%0&7 waypoints!"
+            created-waypoint: "You have created waypoint '&e%0&7' successfully!"
+            deleted-waypoint: "You have removed '&e%0&7'"
+            discovered-waypoint: "You have discovered '&e%0&7'!"
+        map:
+            cursor:
+                hover: "%0"
+        inventory:
+            manager:
+                title: "&1&lWaypoints"
+                buttons:
+                    your-waypoints: "&e&lYour Waypoints"
+                    shared-waypoints: "&a&lShared Waypoints"
+                    discover-waypoints: "&e&lDiscovered Waypoints"
+                    public-waypoints: "&b&lPublic Waypoints"
+                    staff-waypoints: "&c&lStaff Waypoints"
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                    unhide-all: "&a&lUnhide All"
+                items:
+                    private:
+                        # Yes, this 'line' business may seem suspicious, but
+                        # unfortunately not, it does not mean you can add/remove lines
+                        name: "&a%0"
+                        line-1: "&fVisibility: &e%0"
+                        line-2: "&fType: &e%0"
+                        line-3: "&fPublic: &e%0"
+                        line-4: "&fStaff: &e%0"
+                        line-5: "&fDiscoverable: &e%0"
+                        line-6: "&7&lLeft-click &7to change cursor type"
+                        line-7: "&7&lRight-click &7to change visibility"
+                        line-8: "&7&lMiddle-click &7to teleport"
+                        line-9: "&7&lShift left-click &7to edit waypoint"
+                    shared:
+                        name: "&a%0"
+                        line-1: "&fSet by &e%0"
+                        line-2: "&fType: &e%0"
+                        line-3: "&fX: &e%0"
+                        line-4: "&fZ: &e%0"
+                        line-5: "&fVisibility: &e%0"
+                        line-6: "&7&lLeft-click &7to change visibility"
+                        line-7: "&7&lRight-click &7to teleport"
+                        line-8: "&7&lShift left-click &7to edit waypoint"
+                    public:
+                        name: "&7%0"
+                        line-1: "&fSet by &e%0"
+                        line-2: "&fType: &e%0"
+                        line-3: "&fX: &e%0"
+                        line-4: "&fZ: &e%0"
+                        line-5: "&fVisibility: &e%0"
+                        line-6: "&7&lLeft-click &7to change visibility"
+                        line-7: "&7&lRight-click &7to teleport"
+                        line-8: "&7&lShift left-click &7to edit waypoint"
+            editor:
+                title: "&2&lEdit Waypoint"
+                items:
+                    waypoint:
+                        name: "&a%0"
+                        line-1: "&fCreated by &e%0"
+                    discover:
+                        name: "&b&lSet discover range"
+                        line-1: "&fEnabled: &e%0"
+                        line-2: "&fCurrent range: &e%0"
+                        line-3: "&7&lDrop &7to toggle discovery mode"
+                        line-4: "&7&lLeft click &7to decrease range(&c-1&7)"
+                        line-5: "&7&lShift-left click &7to decrease range(&c-5&7)"
+                        line-6: "&7&lRight click &7to increase range(&a+1&7)"
+                        line-7: "&7&lShift-right click &7to increase range(&a+5&7)"
+                    icon:
+                        name: "&b&lChange icon type"
+                        line-1: "&fCurrent Type: &e%0"
+                    visibility:
+                        name: "&b&lChange Visibility"
+                        line-1: "&fVisibility: &e%0"
+                    share:
+                        name: "&b&lShare"
+                        line-1: "&fShared with &e%0&f player(s)"
+                    delete:
+                        name: "&c&lDelete"
+                    teleport:
+                        name: "&a&lTeleport"
+                        line-1: "&fX: &e%0"
+                        line-2: "&fY: &e%0"
+                        line-3: "&fZ: &e%0"
+                    public:
+                        name: "&9&lToggle Public"
+                        line-1: "&fCurrent status: &e%0"
+                    staff:
+                        name: "&9&lToggle Staff"
+                        line-1: "&fCurrent status: &e%0"
+                    lock-visibility:
+                        name: "&c&lLock Visibility"
+                        line-1: "&fLocked: &e%0"
+            share-waypoint:
+                title: "&2Select players to share with"
+                buttons:
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                items:
+                    name: "&a%0"
+                    add: "&7Click to add"
+                    remove: "&7Click to remove"
+    citizens:
+        name: "Citizens"
+        map:
+            cursor:
+                hover: "%0"
+        inventory:
+            manager:
+                title: "&2&lEdit NPC Cursors"
+                buttons:
+                    next-page: "&f&lNext Page"
+                    previous-page: "&f&lPrevious Page"
+                items:
+                    npc:
+                        name: "&b%0"
+                        line-1: "&fCurrent icon: &e%0"
+                        line-2: "&fRange: &e%0"
+                        line-3: "&fHighlighted: &e%0"
+                        line-4: "&fVisible: &e%0"
+                        line-5: "&7&lLeft click &7to change the icon"
+                        line-6: "&7&lRight click &7to highlight/unhighlight"
+                        line-7: "&7&lPress Q &7to change visibility"
+                        line-8: "&7&lShift-left click &7to lower the range"
+                        line-9: "&7&lShift-right click &7to raise the range"
+    playerheads:
+        name: "Player Heads"
+        notification:
+            toggled-visibility: "&aYou have toggled your player heads!"
+    beacons:
+        name: "Beacons"
+        command:
+            usage: "&c/beacon <add|remove|create|delete> ..."
+            usage-add-remove: "&c/beacon <add|remove> <beacon> <player> [map]"
+            usage-destroy: "&c/beacon destroy <beacon> [map]"
+            usage-create: "&c/beacon create <beacon>"
+            removed: "Disabled '&e%0&7' from viewing beacon '&e%1&7'."
+            added: "Enabled '&e%0&7' viewing beacon '&e%1&7'."
+            created: "You have created beacon '&e%0&7' successfully!"
+            destroyed: "You have removed beacon '&e%0&7' successfully!"
+        notification:
+            specify-map: "&cYou must specify a map name!"
+            invalid-map: "&cInvalid map!"
+            invalid-argument: "&cInvalid arguments! &7Please view the '&ebeacon&7' section of the &bREADME&7 for more info!"
+            not-enabled: "&cBeacons aren't enabled in this map!"
+            specify-location: "&cYou must specify a location! (x and z)"
+            invalid-player: "&e%0&7 is not online right now"
+    markers:
+        name: "Markers"
+        command:
+            usage: "&c/markers <add|remove|removeall|create|destroy> ..."
+            usage-add-remove: "&c/markers <add|remove> <group> <player> [map]"
+            usage-destroy: "&c/markers destroy <group> <marker> [map]"
+            usage-create: "&c/markers create <group> <marker>"
+            removed: "Disabled '&e%0&7' from viewing marker '&e%1&7'."
+            added: "Enabled '&e%0&7' viewing marker '&e%1&7'."
+            created: "You have created marker '&e%0&7' successfully!"
+            destroyed: "You have removed marker '&e%0&7' successfully!"
+        notification:
+            invalid-argument: "&cInvalid arguments! &7Please view the '&emarkers&7' section of the &bREADME&7 for more info!"
+            specify-location: "&cYou must specify a location! (x and z)"
+            invalid-player: "&e%0&7 is not online right now"
+            specify-world: "&cYou must specify a world!"
+            invalid-group: "&cThat group does not exist!"
+    shaders:
+        name: "Region Shaders"
+        command:
+            usage: "&c/mapshaders <add|remove|create|destroy> ..."
+            usage-add-remove: "&c/mapshaders <add|remove> <region> <player>"
+            usage-destroy: "&c/mapshaders destroy <region>"
+            usage-create: "&c/mapshaders create <region>"
+            removed: "Disabled '&e%0&7' from viewing region '&e%1&7'."
+            added: "Enabled '&e%0&7' viewing region '&e%1&7'."
+            created: "You have created region '&e%0&7' successfully!"
+            destroyed: "You have removed region '&e%0&7' successfully!"
+        notification:
+            invalid-argument: "&cInvalid arguments! &7Please view the '&eregions&7' section of the &bREADME&7 for more info!"
+            specify-location: "&cYou must specify a location! (x and z)"
+            invalid-player: "&e%0&7 is not online right now"
+            invalid-region: "&eThat region does not exist!"
