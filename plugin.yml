@@ -1,6 +1,6 @@
 name: Cartographer
 main: io.github.bananapuncher714.cartographer.Cartographer
-version: 12.1
+version: 12.2
 description: Adds a serverside minimap to Minecraft!
 author: BananaPuncher714
 softdepend:

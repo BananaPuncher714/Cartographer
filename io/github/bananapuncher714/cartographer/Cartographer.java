@@ -26,6 +26,7 @@ import org.bukkit.map.MinecraftFont;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.bananapuncher714.cartographer.api.CartographerPlugin;
+import io.github.bananapuncher714.cartographer.api.MapCache;
 import io.github.bananapuncher714.cartographer.api.objects.ZoomAction;
 import io.github.bananapuncher714.cartographer.api.util.FailSafe;
 import io.github.bananapuncher714.cartographer.api.util.ImageUtil;
@@ -359,6 +360,10 @@ public class Cartographer extends JavaPlugin implements Listener, CartographerPl
 			MapManager.getInstance().registerMinimap( map );
 		}
 		return map;
+	}
+	
+	public MapCache getMapCache() {
+		return MapManager.getInstance();
 	}
 	
 	private void update() {

@@ -17,4 +17,5 @@ public interface CartographerPlugin {
 	public ZoomAction getZoomAction( boolean leftClick );
 	public Minimap createNewMap( boolean register, String id );
 	public Minimap createNewMap( boolean register, String id, String name );
+	public MapCache getMapCache();
 }

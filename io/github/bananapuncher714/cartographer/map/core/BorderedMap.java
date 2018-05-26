@@ -440,7 +440,9 @@ public class BorderedMap implements Minimap {
 		dataFolder.mkdirs();
 		module.load( this, dataFolder );
 		Module old = modules.put( id, module );
-		old.unload();
+		if ( old != null ) {
+			old.unload();
+		}
 	}
 	
 	private void loadModules() {
