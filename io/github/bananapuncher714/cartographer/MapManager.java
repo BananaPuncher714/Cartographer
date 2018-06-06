@@ -55,6 +55,14 @@ public class MapManager implements Listener, MapCache {
 			}
 		}
 	}
+	
+	public void stop( UUID uuid ) {
+		Minimap map = registeredMaps.get( uuid );
+		if ( map instanceof BorderedMap ) {
+			( ( BorderedMap ) map ).disable();
+		}
+		registeredMaps.remove( uuid );
+	}
 
 	@Override
 	public MapView getMapView( Minimap bMap, MapView map, boolean zoom, boolean refresh ) {

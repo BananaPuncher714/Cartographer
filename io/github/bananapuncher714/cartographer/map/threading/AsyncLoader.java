@@ -40,9 +40,10 @@ public class AsyncLoader {
 
 	public void loadChunk( ChunkLocation location ) {
 		synchronized ( loadQueue ) {
-			if ( !beingLoaded.contains( location )  ) {
+//			if ( !beingLoaded.contains( location )  ) {
 				loadQueue.add( location );
-			}
+//			}
+//			System.out.println( "BQ: " + beingLoaded.size() );
 		}
 	}
 
@@ -66,7 +67,7 @@ public class AsyncLoader {
 			if ( !loadQueue.isEmpty() ) {
 				ChunkLocation loc = loadQueue.iterator().next();
 				loadQueue.remove( loc );
-				beingLoaded.add( loc );
+//				beingLoaded.add( loc );
 				return loc;
 			}
 		}
@@ -75,7 +76,7 @@ public class AsyncLoader {
 	
 	protected void confirmLoad( ChunkLocation location ) {
 		synchronized ( loadQueue ) {
-			beingLoaded.remove( location );
+//			beingLoaded.remove( location );
 		}
 	}
 

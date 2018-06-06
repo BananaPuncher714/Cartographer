@@ -11,6 +11,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.map.MapCursor;
+import org.bukkit.potion.PotionEffectType;
 
 import com.google.common.io.Files;
 
@@ -58,6 +59,12 @@ public class RadarAddon extends Module {
 						cursors.add( new RealWorldCursor( ent.getLocation(), MapCursor.Type.GREEN_POINTER, hwoob ) );
 					} else if ( players && ent instanceof Player ) {
 						if ( ( ( Player ) ent ).isSneaking() ) {
+							continue;
+						}
+						if ( player != ent && ent.hasPermission( "cartographer.radar.vanish" ) ) {
+							continue;
+						}
+						if ( ( ( Player ) ent ).hasPotionEffect( PotionEffectType.INVISIBILITY ) ) {
 							continue;
 						}
 						cursors.add( new RealWorldCursor( ent.getLocation(), MapCursor.Type.BLUE_POINTER, hwoob ) );

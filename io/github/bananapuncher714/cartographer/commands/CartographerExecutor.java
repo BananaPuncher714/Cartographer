@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+import org.apache.commons.io.FileUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -15,6 +16,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.map.MapView;
 import org.bukkit.map.MapView.Scale;
+
+import com.google.common.io.Files;
 
 import io.github.bananapuncher714.cartographer.CPerms;
 import io.github.bananapuncher714.cartographer.Cartographer;
@@ -59,6 +62,8 @@ public class CartographerExecutor implements CommandExecutor {
 				cmd_chunkreload( arg0, arg3 );
 			} else if ( arg3[ 0 ].equalsIgnoreCase( "give" ) ) {
 				cmd_give( arg0, arg3 );
+			} else if ( arg3[ 0 ].equalsIgnoreCase( "delete" ) ) {
+				cmd_delete( arg0, arg3 );
 			} else {
 				CLogger.msg( arg0, "main.command.usage" );
 			}
@@ -340,5 +345,35 @@ public class CartographerExecutor implements CommandExecutor {
 			CLogger.msg( sender, "header", CLogger.parse( sender, "main.name" ), CLogger.parse( sender, "main.command.give-usage" ) );
 			return;
 		}
+	}
+	
+	private void cmd_delete( CommandSender sender, String[] args ) {
+		if ( !sender.hasPermission( "cartographer.admin" ) ) {
+			CLogger.msg( sender, "header", CLogger.parse( sender, "main.name" ), CLogger.parse( sender, "main.command.no-permission" ) );
+			return;
+		}
+		if ( args.length < 2 ) {
+			CLogger.msg( sender, "header", CLogger.parse( sender, "main.name" ), CLogger.parse( sender, "main.command.delete-help" ) );
+			return;
+		}
+		Minimap fmap = MapManager.getInstance().getMinimap( args[ 1 ] );
+		if ( fmap == null ) {
+			CLogger.msg( sender, "header", CLogger.parse( sender, "main.name" ), CLogger.parse( sender, "main.command.invalid-map", args[ 1 ] ) );
+			return;
+		}
+		MapManager.getInstance().stop( fmap.getUID() );
+		final Minimap finMap = fmap;
+		Bukkit.getScheduler().scheduleAsyncDelayedTask( Cartographer.getMain(), new Runnable() {
+			@Override
+			public void run() {
+				try {
+					FileUtils.deleteDirectory( finMap.getDataFolder() );
+					CLogger.info( "Deleted " + finMap.getId() + " successfully!");
+				} catch ( IOException e ) {
+					e.printStackTrace();
+				}
+			}
+		}, 1 );
+		CLogger.msg( sender, "header", CLogger.parse( sender, "main.name" ), CLogger.parse( sender, "main.notification.deleted-map", fmap.getId() ) );
 	}
 }

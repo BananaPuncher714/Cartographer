@@ -9,6 +9,7 @@ zoom-actions:
     right: ZOOM_OUT
     left: ZOOM_IN
 world-whitelist: false
+render-on-chunk-load: false
 blacklisted-worlds:
 - 'world_name_here'
 map-ids: []

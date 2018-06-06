@@ -1,6 +1,6 @@
 name: Cartographer
 main: io.github.bananapuncher714.cartographer.Cartographer
-version: 12.2
+version: 12.6
 description: Adds a serverside minimap to Minecraft!
 author: BananaPuncher714
 softdepend:
@@ -18,6 +18,8 @@ softdepend:
 - "GangsPlus"
 - "GriefPrevention"
 - "MythicMobs"
+- "ASkyBlock"
+- "AcidIsland"
 commands:
     cartographer:
         description: The base for the plugin

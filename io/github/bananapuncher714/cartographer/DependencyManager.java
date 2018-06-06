@@ -21,6 +21,8 @@ public final class DependencyManager {
 	private static final boolean gangsPlus = Bukkit.getPluginManager().getPlugin( "GangsPlus" ) != null;
 	private static final boolean griefPrevention = Bukkit.getPluginManager().getPlugin( "GriefPrevention" ) != null;
 	private static final boolean mythicmobs = Bukkit.getPluginManager().getPlugin( "MythicMobs" ) != null;
+	private static final boolean acidisland = Bukkit.getPluginManager().getPlugin( "AcidIsland" ) != null;
+	private static final boolean askyblock = Bukkit.getPluginManager().getPlugin( "ASkyBlock" ) != null;
 	
 	public static String parse( Player player, String input ) {
 		String result = input;
@@ -71,5 +73,13 @@ public final class DependencyManager {
 	
 	public static boolean isMythicMobsEnabled() {
 		return mythicmobs;
+	}
+	
+	public static boolean isASkyBlockEnabled() {
+		return askyblock;
+	}
+	
+	public static boolean isAcidIslandEnabled() {
+		return acidisland;
 	}
 }

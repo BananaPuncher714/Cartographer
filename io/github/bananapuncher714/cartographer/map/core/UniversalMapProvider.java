@@ -332,6 +332,9 @@ public class UniversalMapProvider implements MapProvider {
 		if ( isInfiniteRendering() ) {
 			for ( Player player : mainWorld.getPlayers() ) {
 				Location ploc = player.getLocation();
+				if ( ploc.getWorld() != mainWorld ) {
+					continue;
+				}
 				if ( squareRenderBorder ) {
 					if ( Math.abs( ploc.getX() - x ) + 16 < 1024 && Math.abs( ploc.getZ() - z ) + 16 < renderDistance ) {
 						return true;

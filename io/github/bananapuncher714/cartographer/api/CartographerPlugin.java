@@ -14,6 +14,7 @@ public interface CartographerPlugin {
 	public double getTpsThreshold();
 	public boolean isBlacklisted( String world );
 	public boolean isCircularZooming();
+	public boolean isRenderOnChunkLoad();
 	public ZoomAction getZoomAction( boolean leftClick );
 	public Minimap createNewMap( boolean register, String id );
 	public Minimap createNewMap( boolean register, String id, String name );

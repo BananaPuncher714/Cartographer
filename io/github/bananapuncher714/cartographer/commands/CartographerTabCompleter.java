@@ -31,6 +31,7 @@ public class CartographerTabCompleter implements TabCompleter {
 				aos.add( "reload" );
 				aos.add( "chunkreload" );
 				aos.add( "give" );
+				aos.add( "delete" );
 			}
 			if ( CPerms.canChangeLocale( arg0 ) ) {
 				aos.add( "locale" );

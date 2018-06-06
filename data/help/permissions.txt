@@ -17,7 +17,7 @@ cartographer.factionsuuid.cursors - Allows you to see other faction members as w
 
 cartographer.kingdoms.cursors - Allows you to see other kingdom members as well as your kingdom home;
 
-cartographer.radar.use - Lets you use the radar;
+cartographer.radar.vanish - Hides you from other people
 
 cartographer.towny.cursors - Lets you see town mates and the town home;
 
@@ -29,7 +29,7 @@ cartographer.citizens.bypass.range - Lets you see all the citizens everywhere
 
 cartographer.quests.cursors - Lets you see all your locations to reach, true by default
 
-cartographer.playerheads.shader - Lets you see the heads per player
+cartographer.playerheads.vanish - Hides you from other people
 
 cartographer.beacons.create - Lets you create beacons
 cartographer.beacons.destroy - Lets you remove beacons

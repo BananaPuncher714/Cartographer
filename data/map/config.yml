@@ -74,6 +74,8 @@ module:
     shaders: true
     mythicmobs: false
     gangsplus: true
+    askyblock: true
+    acidisland: true
 
 presets:
 - 1.11.2.yml

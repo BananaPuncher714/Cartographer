@@ -25,6 +25,8 @@ import org.bukkit.map.MapCursor.Type;
 
 import com.google.common.io.Files;
 
+import io.github.bananapuncher714.acidisland.AcidIslandModule;
+import io.github.bananapuncher714.askyblock.ASkyBlockModule;
 import io.github.bananapuncher714.beacon.BeaconAddon;
 import io.github.bananapuncher714.cartographer.Cartographer;
 import io.github.bananapuncher714.cartographer.DependencyManager;
@@ -574,6 +576,20 @@ public class BorderedMap implements Minimap {
 				mFile.mkdirs();
 				addon.load( this, mFile );
 				modules.put( "mythicmobs", addon );
+			}
+			if ( c.getBoolean( "module.askyblock" ) && DependencyManager.isASkyBlockEnabled() ) {
+				ASkyBlockModule addon = new ASkyBlockModule();
+				File mFile = new File( getDataFolder() + "/modules/" + "askyblock" ) ;
+				mFile.mkdirs();
+				addon.load( this, mFile );
+				modules.put( "askyblock", addon );
+			}
+			if ( c.getBoolean( "module.acidisland" ) && DependencyManager.isAcidIslandEnabled() ) {
+				AcidIslandModule addon = new AcidIslandModule();
+				File mFile = new File( getDataFolder() + "/modules/" + "acidisland" ) ;
+				mFile.mkdirs();
+				addon.load( this, mFile );
+				modules.put( "acidisland", addon );
 			}
 			{
 				MapViewerAddon addon = new MapViewerAddon();

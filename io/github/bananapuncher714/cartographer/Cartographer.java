@@ -64,6 +64,7 @@ public class Cartographer extends JavaPlugin implements Listener, CartographerPl
 	private Set< String > blacklist = new HashSet< String >();
 	private boolean worldWhitelist = false;
 	private boolean circularZooming = false;
+	private boolean renderOnChunkLoad = false;
 	private ZoomAction left, right;
 	private double tpsThreshold;
 	
@@ -246,6 +247,7 @@ public class Cartographer extends JavaPlugin implements Listener, CartographerPl
 		}
 		worldWhitelist = c.getBoolean( "world-whitelist" );
 		circularZooming = c.getBoolean( "circular-zooming" );
+		renderOnChunkLoad = c.getBoolean( "render-on-chunk-load" );
 		left = FailSafe.getEnum( ZoomAction.class, c.getString( "zoom-actions.left" ) );
 		right = FailSafe.getEnum( ZoomAction.class, c.getString( "zoom-actions.right" ) );
 		tpsThreshold = c.getDouble( "tps-threshold" );
@@ -337,6 +339,11 @@ public class Cartographer extends JavaPlugin implements Listener, CartographerPl
 	@Override
 	public boolean isCircularZooming() {
 		return circularZooming;
+	}
+	
+	@Override
+	public boolean isRenderOnChunkLoad() {
+		return renderOnChunkLoad;
 	}
 	
 	@Override

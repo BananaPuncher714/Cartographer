@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffectType;
 
 import io.github.bananapuncher714.cartographer.api.map.addon.PixelShader;
 import io.github.bananapuncher714.cartographer.api.objects.MapCursorLocation;
@@ -40,6 +41,12 @@ public class ImagePixelShader implements PixelShader {
 		}
 		for ( Player player : Bukkit.getOnlinePlayers() ) {
 			if ( player.isSneaking() ) {
+				continue;
+			}
+			if ( player != receiver && player.hasPermission( "cartographer.playerheads.vanish" ) ) {
+				continue;
+			}
+			if ( player.hasPotionEffect( PotionEffectType.INVISIBILITY ) ) {
 				continue;
 			}
 			if ( player.getLocation().getWorld() != receiver.getLocation().getWorld() ) {

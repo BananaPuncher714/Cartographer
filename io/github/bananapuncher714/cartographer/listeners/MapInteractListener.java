@@ -14,6 +14,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.server.MapInitializeEvent;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.map.MapView;
@@ -123,6 +124,7 @@ public class MapInteractListener implements Listener {
 		if ( map == null ) {
 			meta.setDisplayName( "\u00a7fMap" );
 			meta.setLore( null );
+			meta.addItemFlags( ItemFlag.HIDE_POTION_EFFECTS );
 			item.setItemMeta( meta );
 			return;
 		}

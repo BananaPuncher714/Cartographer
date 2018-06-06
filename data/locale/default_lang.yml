@@ -1,6 +1,6 @@
 # This is the default language file for Cartographer! If you mess up with this one,
 # delete it and it will regenerate.
-version: "4.0.0"
+version: "4.0.2"
 
 # If you want to make your own language file, you must include the three lines below.
 # Your id is the internal name
@@ -35,6 +35,7 @@ messages:
             give-usage: "&cUsage: /cartographer give <player> <mapname> <slot>"            
             specify-player: "&c%0 is not online right now!"
             invalid-map: "&c%0 is not a valid map!"
+            delete-help: "&cUsage: /cartographer delete <map-id>"
         notification:
             saving-image: "Saving image to disk..."
             saved-image: "Image was saved successfully to disk!"
@@ -56,6 +57,8 @@ messages:
             no-overlay-4-u: "&cYou cannot set an overlay for your current map!"
             
             no-map-found: "&cYou don't have an active map!"
+            
+            deleted-map: "&bYou have deleted map '%0' successfully!"
         inventory:
             map-selector:
                 title: "&2&lMap Selector"

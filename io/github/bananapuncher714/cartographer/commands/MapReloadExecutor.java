@@ -1,6 +1,7 @@
 package io.github.bananapuncher714.cartographer.commands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,6 +11,8 @@ import io.github.bananapuncher714.cartographer.CPerms;
 import io.github.bananapuncher714.cartographer.Cartographer;
 import io.github.bananapuncher714.cartographer.MapManager;
 import io.github.bananapuncher714.cartographer.api.map.Minimap;
+import io.github.bananapuncher714.cartographer.api.objects.ChunkLocation;
+import io.github.bananapuncher714.cartographer.listeners.ChunkLoadListener;
 import io.github.bananapuncher714.cartographer.message.CLogger;
 
 public class MapReloadExecutor implements CommandExecutor {
@@ -45,7 +48,11 @@ public class MapReloadExecutor implements CommandExecutor {
 			for ( Player pl : Bukkit.getOnlinePlayers() ) {
 				if ( CPerms.isAdmin( arg0 ) ) CLogger.msg( pl, "header", CLogger.parse( arg0, "main.name" ), CLogger.parse( arg0, "main.notification.reloading-map", map.getName(), map.getId() ) );
 			}
-			map.refreshMap( true );
+			
+			for ( Chunk chunk : map.getWorld().getLoadedChunks() ) {
+				ChunkLoadListener.addChunkToRenderQueue( new ChunkLocation( chunk ) );
+			}
+			
 		} else {
 			CLogger.msg( arg0, "header", CLogger.parse( arg0, "main.name" ), CLogger.parse( arg0, "main.notification.updates-disabled", map.getName(), map.getId() ) );
 		}

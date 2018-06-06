@@ -40,6 +40,9 @@ public class ChunkLoadListener implements Listener {
 		if ( event.isNewChunk() ) {
 			return;
 		}
+		if ( !Cartographer.getMain().isRenderOnChunkLoad() ) {
+			return;
+		}
 		Chunk chunk = event.getChunk();
 		addChunkToRenderQueue( new ChunkLocation( event.getWorld(), chunk.getX(), chunk.getZ() ) );
 	}
@@ -48,6 +51,9 @@ public class ChunkLoadListener implements Listener {
 		if ( ReflectionUtils.getTps()[ 0 ] < Cartographer.getMain().getTpsThreshold() ) {
 			CLogger.debug( "TPS Threshold reached!" );
 			return;
+		}
+		if ( Bukkit.getOnlinePlayers().size() == 0 ) {
+			RENDER_QUEUE.clear();
 		}
 		int MLS = Cartographer.getMain().getMapLoadSpeed();
 		Queue< ChunkLocation > chunks = ChunkLoadListener.RENDER_QUEUE;
@@ -60,10 +66,10 @@ public class ChunkLoadListener implements Listener {
 			if ( !DependencyManager.doesChunkExist( world, x, z ) ) {
 				continue;
 			}
-			if ( !world.isChunkLoaded( x, z ) ) {
-				world.loadChunk(x, z); // is this needed?
-				continue;
-			}
+//			if ( !world.isChunkLoaded( x, z ) ) {
+//				world.loadChunk( x, z ); // is this needed?
+//				continue;
+//			}
 			for ( Minimap map : MapManager.getInstance().getMinimaps().values() ) {
 				if ( map.isRenderOnChunkLoad() && map.isUpdateEnabled() ) {
 					map.recolorChunk( world, x, z );
